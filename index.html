@@ -8,41 +8,79 @@
         body{
             background-color: black;
         }
-        #par0{
-            text-align: center;
-            color: dimgray;
-            font-size: 20px;
-            font-weight: bold;
-            font-style: oblique;
-        }
         .general{
             text-align: center;
             color: grey;
             font-style: oblique;
         }
         .inp{
+            width: 15em;
             padding: 30px;
             border-radius: 40px;
             border-style: solid;
             text-align: center;
             font-weight: bold;
+            transition: width 0.2s;
+        }
+        .inp:hover{
+            width: 20em;
+        }
+        .inpgo{
+            width: 7em;
+            padding: 30px;
+            border-radius: 40px;
+            border-style: solid;
+            text-align: center;
+            font-weight: bold;
+            transition: width 0.2s;
+        }
+        .inpgo:hover{
+            width: 10em;
         }
         .inpdec{
             text-align: center;
         }
+        #par{
+            color: white;
+            height: 120px;
+            width: 200px;
+            padding: 0px;
+            border-radius: 10px;
+            border-style: solid;
+            border-width:medium;
+            text-align: center;
+            color: white;
+            position: sticky;
+            transform: translate(450px,120px);
+        }
+        #but{
+            padding: 0px;
+            border-width: 0px;
+            color: black;
+            float: right;
+            font-size: 14px;
+            transition: font-size 0.2s;
+        }
+        #but:hover{
+            font-size: 17px;
+        }
+        
     </style>
 </head>
 <body>
-    <p id="par0">This is a work in progress.This is a login page made using html, css, javascript.</p>
     <h1 class="general">Login</h1>
     <div class="inpdec">
-    <input type="text" placeholder="Email" id="email" size="20px" class="inp">
+    <input type="text" placeholder="Email" id="email" class="inp">
         <br/>
-    <input type="password" placeholder="Password" id="password" size="20px" class="inp">
+    <input type="password" placeholder="Password" id="password" class="inp">
         <br>
-    <input type="submit" value="Go!" id="login" class="inp" onclick="onlogin()">
+    <input type="submit" value="Go!" id="login" class="inpgo" onclick="onlogin()">
     </div>
     
+    <div id="par">
+        <button id="but" onclick="test()">X</button>
+    <p id="hide">This is a work in progress.This is a login page made using html, css, javascript.</p>
+    </div>
     
     <script type="text/javascript">
         function onlogin(){
@@ -55,6 +93,10 @@
                 }else{
                     alert("Wrong credentials! Please try again!"); document.getElementById("email").value = ""; document.getElementById("password").value = ""; document.getElementById("email").focus();
                 }
+        }
+        function test()
+        {
+            document.getElementById("par").style.display= "none";
         }
     </script>
 </body>
