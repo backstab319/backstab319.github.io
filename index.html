@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loging page 1.0</title>
+    <title>Login page 1.0</title>
     <meta charset="utf-8" name="viewport" content="device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
     <style>
@@ -50,10 +50,9 @@
             border-width:medium;
             text-align: center;
             color: white;
-            position: sticky;
-            transform: translate(450px,120px);
         }
         #but{
+            text-align: center;
             padding: 0px;
             border-width: 0px;
             color: black;
@@ -64,7 +63,6 @@
         #but:hover{
             font-size: 17px;
         }
-        
     </style>
 </head>
 <body>
@@ -75,11 +73,10 @@
     <input type="password" placeholder="Password" id="password" class="inp">
         <br>
     <input type="submit" value="Go!" id="login" class="inpgo" onclick="onlogin()">
-    </div>
-    
-    <div id="par">
+        <div id="par">
         <button id="but" onclick="test()">X</button>
     <p id="hide">This is a work in progress.This is a login page made using html, css, javascript.</p>
+    </div>
     </div>
     
     <script type="text/javascript">
