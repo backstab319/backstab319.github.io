@@ -6,7 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FormsModule } from '@angular/forms';
 
+
+import { MatInputModule, MatInput } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +20,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CustomProjectComponent } from './project-requests/custom-project/custom-project.component';
+import { FixProjectComponent } from './project-requests/fix-project/fix-project.component';
+import { CreateCustomProjectComponent } from './project-requests/create-custom-project/create-custom-project.component';
 
 const myRoutes: Routes = [
   {path: '', component: MainContentComponent, pathMatch: 'full'},
@@ -30,7 +37,10 @@ const myRoutes: Routes = [
     ToolbarComponent,
     ProjectComponent,
     DeveloperComponent,
-    MainContentComponent
+    MainContentComponent,
+    CustomProjectComponent,
+    FixProjectComponent,
+    CreateCustomProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,10 @@ const myRoutes: Routes = [
     MatCardModule,
     MatListModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
