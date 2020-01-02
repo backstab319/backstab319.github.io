@@ -1,7 +1,6 @@
 import { CustomProject } from './custom-project.model';
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({providedIn: 'root'})
 
@@ -10,10 +9,10 @@ export class CustomProjectService {
   private customData: CustomProject[] = [];
   private CustomDataUpdated = new Subject<CustomProject[]>();
 
-  constructor(private db: AngularFirestore) {}
+  constrctor() {}
 
   getCustomData() {
-    return this.db.collection('users').snapshotChanges();
+    return [...this.customData];
   }
 
   getCustomDataListener() {
