@@ -5,6 +5,9 @@ import { CustomProject } from '../../shared/custom-project.model';
 import { FixProject } from '../../shared/fix-project.model';
 import { FixProjectService } from '../../shared/fix-project.service';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
@@ -17,7 +20,9 @@ export class MainContentComponent implements OnInit, OnDestroy {
   fixProjectsData: FixProject[] = [];
   private fpssub: Subscription;
 
-  constructor( public cdservice: CustomProjectService, public fpsservice: FixProjectService) { }
+  firedata: any;
+
+  constructor(public cdservice: CustomProjectService, public fpsservice: FixProjectService, private db: AngularFirestore) { }
 
   ngOnInit() {
     this.cdssub = this.cdservice.getCustomDataListener().subscribe((data: CustomProject[]) => {
@@ -26,6 +31,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     this.fpssub = this.fpsservice.fixProjectDataListener().subscribe((fdata: FixProject[]) => {
       this.fixProjectsData = fdata;
     });
+    this.firedata = this.cdservice.getCustomData();
   }
 
   ngOnDestroy() {

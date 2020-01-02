@@ -23,6 +23,7 @@ export class CreateCustomProjectComponent implements OnInit {
       personEmail: formData.value.personEmail,
       personProject: formData.value.persoProject
     });
+    formData.resetForm();
   }
 
 }

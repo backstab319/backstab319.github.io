@@ -23,6 +23,7 @@ export class FixProjectComponent implements OnInit {
       personEmail: fixFormData.value.personEmail,
       projectIssue: fixFormData.value.projectIssue
     });
+    fixFormData.resetForm();
   }
 
 }

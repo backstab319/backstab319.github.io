@@ -25,6 +25,10 @@ import { CustomProjectComponent } from './project-requests/custom-project/custom
 import { FixProjectComponent } from './project-requests/fix-project/fix-project.component';
 import { CreateCustomProjectComponent } from './project-requests/create-custom-project/create-custom-project.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 const myRoutes: Routes = [
   {path: '', component: MainContentComponent, pathMatch: 'full'},
   {path: 'aboutProject', component: ProjectComponent, pathMatch: 'full'},
@@ -56,7 +60,9 @@ const myRoutes: Routes = [
     MatDividerModule,
     MatTabsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
