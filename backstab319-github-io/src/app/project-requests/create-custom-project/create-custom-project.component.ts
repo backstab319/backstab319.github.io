@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CustomProjectService } from '../../shared/custom-project.service';
 
@@ -7,22 +7,21 @@ import { CustomProjectService } from '../../shared/custom-project.service';
   templateUrl: './create-custom-project.component.html',
   styleUrls: ['./create-custom-project.component.css']
 })
-export class CreateCustomProjectComponent implements OnInit {
+export class CreateCustomProjectComponent {
 
-  constructor(public passCustomData: CustomProjectService) { }
+  constructor(public customProjectService: CustomProjectService) { }
 
-  ngOnInit() {
-  }
-
-  onCreateCustomProject(formData: NgForm) {
-    if (formData.invalid) {
+  onCreateCustomProject(postedForm: NgForm) {
+    if(postedForm.invalid) {
       return;
     }
-    this.passCustomData.putCustomData({
-      personName: formData.value.personName,
-      personEmail: formData.value.personEmail,
-      personProject: formData.value.persoProject
+
+    this.customProjectService.putData({
+      personName: postedForm.value.personName,
+      personEmail: postedForm.value.personEmail,
+      personProject: postedForm.value.personProject
     });
+    postedForm.resetForm();
   }
 
 }

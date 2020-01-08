@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormsModule } from '@angular/forms';
-
 
 import { MatInputModule, MatInput } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,6 +24,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CustomProjectComponent } from './project-requests/custom-project/custom-project.component';
 import { FixProjectComponent } from './project-requests/fix-project/fix-project.component';
 import { CreateCustomProjectComponent } from './project-requests/create-custom-project/create-custom-project.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 const myRoutes: Routes = [
   {path: '', component: MainContentComponent, pathMatch: 'full'},
@@ -56,7 +60,10 @@ const myRoutes: Routes = [
     MatDividerModule,
     MatTabsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

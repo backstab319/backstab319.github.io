@@ -1,27 +1,32 @@
 import { CustomProject } from './custom-project.model';
-import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 
 export class CustomProjectService {
 
-  private customData: CustomProject[] = [];
-  private CustomDataUpdated = new Subject<CustomProject[]>();
+  constructor(private httpClient: HttpClient) {}
 
-  constrctor() {}
+  private data: CustomProject[] = [];
+  private dataUpdated = new Subject<CustomProject[]>();
 
-  getCustomData() {
-    return [...this.customData];
+  getData() {
+    this.httpClient.get<{message: string, data: CustomProject[]}>('http://localhost:3000/api/')
+      .subscribe((receivedData) => {
+        this.data = receivedData.data;
+        this.dataUpdated.next([...this.data]);
+      });
   }
 
-  getCustomDataListener() {
-    return this.CustomDataUpdated.asObservable();
+  getDataListener() {
+    return this.dataUpdated.asObservable();
   }
 
-  putCustomData(receivedData: CustomProject) {
-    this.customData.push(receivedData);
-    this.CustomDataUpdated.next([...this.customData]);
+  putData(postedData: CustomProject) {
+    this.data.push(postedData);
+    this.dataUpdated.next([...this.data]);
   }
 
 }
