@@ -25,8 +25,12 @@ export class CustomProjectService {
   }
 
   putData(postedData: CustomProject) {
-    this.data.push(postedData);
-    this.dataUpdated.next([...this.data]);
+    this.httpClient.post<{message: string}>('http://localhost:3000/api/', postedData)
+      .subscribe((responseData) => {
+        console.log(responseData);
+        this.data.push(postedData);
+        this.dataUpdated.next([...this.data]);
+      });
   }
 
 }

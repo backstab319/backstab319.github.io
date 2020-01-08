@@ -8,3 +8,14 @@
     {{i.personProject}}
   </mat-card-content>
 </mat-card>
+<mat-card *ngFor='let i of fixData' class='mt-2'>
+  <mat-card-header>
+    <mat-card-title>
+      {{i.personName}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    {{i.personEmail}}
+    {{i.projectIssue}}
+  </mat-card-content>
+</mat-card>

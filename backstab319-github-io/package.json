@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "stsrv" : "nodemon server.js"
+    "stsrv": "nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "firebase": "^7.6.1",
     "hammerjs": "^2.0.8",
