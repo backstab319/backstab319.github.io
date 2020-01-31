@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref='/backstab319'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Web Apps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size='12' size-sm='8' offset-sm='2'>
+        <ion-card *ngFor='let i of apps'>
+          <ion-card-header>
+            <ion-item>
+              <ion-avatar slot='start'>
+                <ion-img [src]='i.appImage'></ion-img>
+              </ion-avatar>
+              <ion-card-title>
+                {{i.appName}}
+              </ion-card-title>
+              <ion-buttons slot='end'>
+                <ion-button [href]='i.appCode'><ion-icon name="code" slot='icon-only'></ion-icon></ion-button>
+              </ion-buttons>
+            </ion-item>
+            <ion-card-subtitle>
+              {{i.appDescription}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item lines='none'>
+              <ion-chip *ngFor='let j of i.appFeatures'>
+                {{j}}
+              </ion-chip>
+              <ion-buttons slot='end'>
+                <ion-button
+                (click)="openApp(i.appOpenLink)"
+                >
+                Open
+                <ion-icon name="play" slot='end'></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

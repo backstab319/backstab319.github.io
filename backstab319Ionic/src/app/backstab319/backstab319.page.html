@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>backstab319</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size='12' size-sm='3' offset-sm='2'>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class='ion-text-center'><h1>Hello there!</h1></ion-card-title>
+          </ion-card-header>
+          <ion-img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSeWY6nfNDnIGOLhL3K8_9gpEMK9KvEBeK5z67CO1eoL3SyrD3'></ion-img>
+          <ion-card-content class='ion-text-center'>
+            <p class="ion-text">Welcome to siddhartha's personal page!</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size='12' size-sm='5'>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title class='ion-text-center'>
+                  <h1>Let's get to the point</h1>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content class='ion-text-center'>
+                <p class="ion-text">
+                  I can make progressive single page web apps using Ionic angular framework. You can view my 
+                  <ion-button fill='outline' color='dark'
+                  href='https://github.com/backstab319'
+                  >
+                    <ion-icon slot='start' name='logo-github'></ion-icon>
+                    github
+                  </ion-button> page for my previous projects.
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size='12'>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title class='ion-text-center'>
+                  <h1>Beautiful web apps!</h1>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content class='ion-text-center'>
+                <p class="ion-text">
+                  I can make beautiful looking web apps that are dynamic and work like a charm! Using ionic framework
+                  i can make a native looking web page that works and feels like an app.
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size='12' size-sm='8' offset-sm='2'>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <h1>More about me</h1>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list lines='none'>
+              <ion-item>
+                <ion-icon slot='end' name='search'></ion-icon>
+                <ion-label><p class="ion-text">Quick learner</p></ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-icon slot='end' name='hammer'></ion-icon>
+                <ion-label><p class="ion-text">A teamplayer</p></ion-label>
+              </ion-item>
+              <ion-row>
+                <ion-col size='12' size-sm='6'>
+                    <ion-button fill='outline' expand='block' color='dark'
+                    (click)="gotoPage('skills')"
+                    >
+                    Skills
+                    <ion-icon slot='end' name='star-outline'></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col size='12' size-sm='6'>
+                  <ion-button
+                    fill='outline'
+                    color='dark'
+                    expand='block'
+                    (click)="gotoPage('projects')"
+                    >
+                    Projects
+                    <ion-icon name="git-branch"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
