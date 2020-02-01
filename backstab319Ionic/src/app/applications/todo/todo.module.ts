@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TodoPageRoutingModule } from './todo-routing.module';
 
 import { TodoPage } from './todo.page';
-import { ToolbarButtonsComponent } from 'src/app/shared/toolbar-buttons/toolbar-buttons.component';
+import { ToolbarButtonsComponent } from '../../shared/toolbar-buttons/toolbar-buttons.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({

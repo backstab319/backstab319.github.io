@@ -13,14 +13,24 @@ export class TodoService {
 
   putList(item: Todo) {
     this.todoList.push(item);
-    return [...this.todoList];
+    this.updatedList.next([...this.todoList]);
   }
 
   getUpdatedList() {
-    return this.updatedList.subscribe;
+    return this.updatedList.asObservable();
   }
 
   getList() {
     return [...this.todoList];
+  }
+
+  popItem(itemIndex: number) {
+    this.todoList.splice(itemIndex, 1);
+    this.updatedList.next([...this.todoList]);
+  }
+
+  reorderItem(itemArray: Todo[]) {
+    this.todoList = itemArray;
+    this.updatedList.next([...this.todoList]);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -9,13 +10,13 @@ import { NgForm } from '@angular/forms';
 export class TodoPage implements OnInit {
   pageLink = '/applications';
 
-  constructor() { }
+  constructor(private td: TodoService) { }
 
   ngOnInit() {
   }
 
   processForm(formData: NgForm) {
-    console.log(formData.value.todo);
+    this.td.putList(formData.value.todo);
     formData.resetForm();
   }
 

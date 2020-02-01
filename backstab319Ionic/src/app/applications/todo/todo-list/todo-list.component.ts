@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { IonReorderGroup } from '@ionic/angular';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 
@@ -8,12 +9,24 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
+  @ViewChild(IonReorderGroup, {static: false}) reorderGroup: IonReorderGroup;
   myList: Todo[];
 
   constructor(private td: TodoService) { }
 
   ngOnInit() {
-    this.myList = this.td.getUpdatedList.subscribe();
+    this.td.getUpdatedList().subscribe(res => {
+      this.myList = res;
+    }, err => {
+      console.log(err);
+    });
   }
 
+  delete(listIndex: number) {
+    this.td.popItem(listIndex);
+  }
+
+  doReorder(ev: any) {
+    this.td.reorderItem(ev.detail.complete(this.myList));
+  }
 }
