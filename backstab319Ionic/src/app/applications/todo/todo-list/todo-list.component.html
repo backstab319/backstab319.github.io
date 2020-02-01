@@ -1,7 +1,7 @@
 <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled='false'>
   <ion-item *ngFor='let i of myList; let j = index' lines='none'>
-    <ion-label padding-start>
-      {{ i }}
+    <ion-label class='ion-padding-start' [color]='i.todoColor'>
+      {{ i.todoText }}
     </ion-label>
     <ion-buttons slot='end'>
       <ion-reorder></ion-reorder>

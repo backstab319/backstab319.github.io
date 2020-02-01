@@ -25,24 +25,27 @@
                 <ion-button [href]='i.appCode'><ion-icon name="code" slot='icon-only'></ion-icon></ion-button>
               </ion-buttons>
             </ion-item>
-            <ion-card-subtitle>
+            <ion-card-subtitle padding-start>
               {{i.appDescription}}
             </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            <ion-item lines='none'>
-              <ion-chip *ngFor='let j of i.appFeatures'>
-                {{j}}
-              </ion-chip>
-              <ion-buttons slot='end'>
+            <ion-chip *ngFor='let j of i.appFeatures'>
+              {{j}}
+            </ion-chip>
+            <ion-row>
+              <ion-col size='12' size-sm='2'>
                 <ion-button
                 (click)="openApp(i.appOpenLink)"
+                fill='outline'
+                expand='block'
+                color='dark'
                 >
                 Open
                 <ion-icon name="play" slot='end'></ion-icon>
                 </ion-button>
-              </ion-buttons>
-            </ion-item>
+              </ion-col>
+            </ion-row>
           </ion-card-content>
         </ion-card>
       </ion-col>
