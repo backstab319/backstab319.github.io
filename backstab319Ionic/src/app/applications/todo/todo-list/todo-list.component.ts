@@ -29,4 +29,8 @@ export class TodoListComponent implements OnInit {
   doReorder(ev: any) {
     this.td.reorderItem(ev.detail.complete(this.myList));
   }
+
+  markDone(noteId: string) {
+    document.getElementById(noteId).style = 'text-decoration: line-through';
+  }
 }

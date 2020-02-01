@@ -1,10 +1,13 @@
 <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled='false'>
   <ion-item *ngFor='let i of myList; let j = index' lines='none'>
-    <ion-label class='ion-padding-start' [color]='i.todoColor'>
+    <ion-label class='ion-padding-start' [color]='i.todoColor' [id]='i.todoText'>
       {{ i.todoText }}
     </ion-label>
     <ion-buttons slot='end'>
       <ion-reorder></ion-reorder>
+      <ion-button (click)='markDone(i.todoText)'>
+        <ion-icon name="done-all" slot='icon-only'></ion-icon>
+      </ion-button>
       <ion-button (click)="delete(j)">
         <ion-icon name="trash" slot='icon-only'></ion-icon>
       </ion-button>
