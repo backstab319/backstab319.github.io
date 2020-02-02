@@ -12,6 +12,7 @@ import { AlertController } from '@ionic/angular';
 export class TodoPage implements OnInit {
   pageLink = '/applications';
   myNote: Todo[] = [];
+  completedNote: Todo[] = [];
 
   myInterface: any = {
     header: 'Color',
@@ -36,6 +37,9 @@ export class TodoPage implements OnInit {
   ngOnInit() {
     this.td.getUpdatedList().subscribe(res => {
       this.myNote = res;
+    });
+    this.td.getUpdatedCompleted().subscribe(res => {
+      this.completedNote = res;
     });
   }
 

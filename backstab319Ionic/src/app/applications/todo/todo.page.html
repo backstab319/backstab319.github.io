@@ -68,8 +68,33 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size='12' size-sm='8' offset-sm='2'>
-        <app-todo-list></app-todo-list>
+      <ion-col size='12' size-sm='4' offset-sm='2'>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class='ion-padding-start'>
+              <h1 *ngIf='myNote.length > 0'>My todo list</h1>
+              <h1 *ngIf='myNote.length < 1'>Nothing to see here</h1>
+            </ion-card-title>
+            <ion-card-subtitle class='ion-padding-start'>Keep your important notes here</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <app-todo-list></app-todo-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size='12' size-sm='4'>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class='ion-padding-start'>
+              <h1 *ngIf='completedNote.length > 0'>Completed</h1>
+              <h1 *ngIf='completedNote.length < 1'>Nothing completed yet</h1>
+            </ion-card-title>
+            <ion-card-subtitle class='ion-padding-start'>Keep your completed notes here</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <app-completed></app-completed>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

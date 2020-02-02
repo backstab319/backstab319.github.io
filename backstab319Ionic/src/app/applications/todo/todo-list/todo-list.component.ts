@@ -22,15 +22,16 @@ export class TodoListComponent implements OnInit {
     });
   }
 
-  delete(listIndex: number) {
-    this.td.popItem(listIndex);
-  }
-
   doReorder(ev: any) {
     this.td.reorderItem(ev.detail.complete(this.myList));
   }
 
-  markDone(noteId: string) {
-    document.getElementById(noteId).style = 'text-decoration: line-through';
+  delete(listIndex: number) {
+    this.td.popItem(listIndex);
+  }
+
+  markDone(noteId: string, itemIndex: number) {
+    document.getElementById(noteId).style.textDecoration = 'line-through';
+    this.td.putCompleted(itemIndex);
   }
 }

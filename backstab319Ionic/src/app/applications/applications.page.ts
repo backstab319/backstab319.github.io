@@ -12,7 +12,8 @@ export class ApplicationsPage implements OnInit {
     {
       appName: 'To Do',
       appDescription: 'List out your things to do so that you dont forget them',
-      appFeatures: ['Make a note', 'Edit notes', 'Delete notes', 'Reorder notes', 'Color notes'],
+      // tslint:disable-next-line: max-line-length
+      appFeatures: ['Make a note', 'Edit notes', 'Delete notes', 'Reorder notes', 'Color notes', 'Strike complete notes', 'Completed notes section'],
       appImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxufq9XwZsW75qlbaSXqCf0NKmLSgxj4P-Iw7i_4p58wxA4AHc',
       appCode: 'https://github.com/backstab319/backstab319.github.io',
       appOpenLink: '/applications/todo'

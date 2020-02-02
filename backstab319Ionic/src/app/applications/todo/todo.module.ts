@@ -9,6 +9,7 @@ import { TodoPageRoutingModule } from './todo-routing.module';
 import { TodoPage } from './todo.page';
 import { ToolbarButtonsComponent } from '../../shared/toolbar-buttons/toolbar-buttons.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { CompletedComponent } from './completed/completed.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     IonicModule,
     TodoPageRoutingModule
   ],
-  declarations: [TodoPage, ToolbarButtonsComponent, TodoListComponent]
+  declarations: [TodoPage, ToolbarButtonsComponent, TodoListComponent, CompletedComponent]
 })
 export class TodoPageModule {}
