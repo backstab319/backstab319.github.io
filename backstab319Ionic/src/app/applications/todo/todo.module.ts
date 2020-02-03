@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TodoPageRoutingModule } from './todo-routing.module';
 
 import { TodoPage } from './todo.page';
-import { ToolbarButtonsComponent } from '../../shared/toolbar-buttons/toolbar-buttons.component';
+
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { CompletedComponent } from './completed/completed.component';
 
@@ -18,6 +18,6 @@ import { CompletedComponent } from './completed/completed.component';
     IonicModule,
     TodoPageRoutingModule
   ],
-  declarations: [TodoPage, ToolbarButtonsComponent, TodoListComponent, CompletedComponent]
+  declarations: [TodoPage, TodoListComponent, CompletedComponent]
 })
 export class TodoPageModule {}

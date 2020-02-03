@@ -1,0 +1,49 @@
+<ion-card class='ion-padding' *ngIf="disp == 'banner'">
+  <ion-card-header>
+    <ion-card-title><h1>
+      Create expenses boards
+    </h1></ion-card-title>
+    <ion-card-subtitle>Make new expenses board here to group different kinds of expenses together</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content></ion-card-content>
+</ion-card>
+<ion-card class='ion-padding' *ngIf='board'>
+  <ion-card-header>
+    <ion-card-title><h2>
+      {{board.boardName}}
+    </h2></ion-card-title>
+    <ion-card-subtitle>
+      {{board.boardSubtitle}}
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list lines='none' *ngIf="disp != 'banner'">
+      <ion-list-header><h2>Expenses</h2></ion-list-header>
+      <ion-item *ngFor='let j of board.boardExpenses'>
+        <ion-label slot='start'> {{j.expensesName}} </ion-label>
+        <ion-chip slot='end'>
+          <ion-label> {{j.expensesValue}} </ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-button
+        fill='outline'
+        expand='block'
+        color='dark'
+        (click)='addBoard()'
+        >Add
+        <ion-icon name="add" slot='end'></ion-icon>
+        </ion-button>
+      
+        <ion-button
+        fill='outline'
+        expand='block'
+        color='dark'
+        (click)='delBoard()'
+        >Delete
+        <ion-icon name="trash" slot='end'></ion-icon>
+        </ion-button>
+    </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

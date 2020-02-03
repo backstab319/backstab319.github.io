@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ToolbarButtonsComponent } from './toolbar-buttons.component';
+import { ExpensesPage } from './expenses.page';
 
-describe('ToolbarButtonsComponent', () => {
-  let component: ToolbarButtonsComponent;
-  let fixture: ComponentFixture<ToolbarButtonsComponent>;
+describe('ExpensesPage', () => {
+  let component: ExpensesPage;
+  let fixture: ComponentFixture<ExpensesPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToolbarButtonsComponent ],
+      declarations: [ ExpensesPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ToolbarButtonsComponent);
+    fixture = TestBed.createComponent(ExpensesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

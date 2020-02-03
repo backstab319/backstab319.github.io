@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size='12' size-sm='8' offset-sm='2'>
+        <ion-card class='ion-padding'>
+          <ion-card-header>
+            <ion-card-title><h1>
+              View expenses
+            </h1></ion-card-title>
+            <ion-card-subtitle>View your expenses here</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size='12' size-sm='8' offset-sm='2'>
+        <ion-card *ngFor='let i of boards' class='ion-padding'>
+          <ion-card-header>
+            <ion-card-title><h2>
+              {{i.boardName}}
+            </h2></ion-card-title>
+            <ion-card-subtitle>
+              {{i.boardSubtitle}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content *ngIf='i.boardExpenses.length > 0'>
+            <ion-list lines='none'>
+              <ion-list-header>Expenses</ion-list-header>
+              <ion-item *ngFor='let j of i.boardExpenses'>
+                <ion-label slot='start'> {{j.expensesName}} </ion-label>
+                <ion-chip slot='end'>
+                  <ion-label> {{j.expensesValue}} </ion-label>
+                </ion-chip>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -11,11 +11,17 @@ const routes: Routes = [
   {
     path: 'todo',
     loadChildren: () => import('./todo/todo.module').then( m => m.TodoPageModule)
+  },
+  {
+    path: 'expenses',
+    loadChildren: () => import('./expenses/expenses.module').then( m => m.ExpensesPageModule)
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ],
 })
 export class ApplicationsPageRoutingModule {}

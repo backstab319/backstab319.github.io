@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <app-toolbar-buttons slot="start" [back]='pageLink'></app-toolbar-buttons>
+    <ion-buttons slot='start'>
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref='/applications'></ion-back-button>
+    </ion-buttons>
     <ion-title>To Do</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +14,7 @@
       <ion-col size='12' size-sm='8' offset-sm='2'>
         <ion-card>
           <ion-card-header>
-            <ion-card-title class='ion-padding-start'>Make a note</ion-card-title>
+            <ion-card-title class='ion-padding-start'><h1>Make a note</h1></ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-list lines='none'>
@@ -72,8 +75,8 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title class='ion-padding-start'>
-              <h1 *ngIf='myNote.length > 0'>My todo list</h1>
-              <h1 *ngIf='myNote.length < 1'>Nothing to see here</h1>
+              <h3 *ngIf='myNote.length > 0'>My todo list</h3>
+              <h3 *ngIf='myNote.length < 1'>Nothing to see here</h3>
             </ion-card-title>
             <ion-card-subtitle class='ion-padding-start'>Keep your important notes here</ion-card-subtitle>
           </ion-card-header>
@@ -86,8 +89,8 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title class='ion-padding-start'>
-              <h1 *ngIf='completedNote.length > 0'>Completed</h1>
-              <h1 *ngIf='completedNote.length < 1'>Nothing completed yet</h1>
+              <h3 *ngIf='completedNote.length > 0'>Completed</h3>
+              <h3 *ngIf='completedNote.length < 1'>Nothing completed yet</h3>
             </ion-card-title>
             <ion-card-subtitle class='ion-padding-start'>Keep your completed notes here</ion-card-subtitle>
           </ion-card-header>
