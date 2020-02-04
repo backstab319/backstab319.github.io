@@ -17,6 +17,7 @@ import { ExpensesPage } from './expenses.page';
   ],
   declarations: [
     ExpensesPage
-  ]
+  ],
+  exports: []
 })
 export class ExpensesPageModule {}

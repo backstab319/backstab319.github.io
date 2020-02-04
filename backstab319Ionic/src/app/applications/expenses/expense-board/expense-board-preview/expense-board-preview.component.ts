@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ExpensesService } from '../../expenses.service';
 import { ExpensesBoard } from '../../expenses-board';
-import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-expense-board-preview',
@@ -10,12 +9,17 @@ import { EventEmitter } from '@angular/core';
 })
 export class ExpenseBoardPreviewComponent implements OnInit {
   board: ExpensesBoard;
-  @Output() dispwhat = new EventEmitter<string>();
-  @Input() disp: string;
 
   constructor(private eb: ExpensesService) { }
 
   ngOnInit() {
+    this.board = {
+      boardName: '',
+      boardSubtitle: '',
+      boardExpenses: [],
+      boardNameColor: '',
+      boardSubtitleColor: ''
+    };
     this.eb.getUpdatedCurrentBoard().subscribe(res => {
       this.board = res;
     });
@@ -23,15 +27,21 @@ export class ExpenseBoardPreviewComponent implements OnInit {
 
   addBoard() {
     this.eb.putIntoExpensesBoards(this.board);
-    this.onDispBanner();
+    this.eb.deleteCurrentBoard();
   }
 
   delBoard() {
+    this.board = {
+      boardName: '',
+      boardSubtitle: '',
+      boardExpenses: [],
+      boardNameColor: '',
+      boardSubtitleColor: ''
+    };
     this.eb.deleteCurrentBoard();
-    this.disp = 'notbanner';
   }
 
-  onDispBanner() {
-    this.dispwhat.emit('banner');
+  deleteExpense(index: number) {
+    this.board.boardExpenses.splice(index, 1);
   }
 }

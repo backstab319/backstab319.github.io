@@ -1,31 +1,36 @@
-<ion-card class='ion-padding' *ngIf="disp == 'banner'">
+<ion-card class='ion-padding'>
   <ion-card-header>
-    <ion-card-title><h1>
-      Create expenses boards
-    </h1></ion-card-title>
-    <ion-card-subtitle>Make new expenses board here to group different kinds of expenses together</ion-card-subtitle>
-  </ion-card-header>
-  <ion-card-content></ion-card-content>
-</ion-card>
-<ion-card class='ion-padding' *ngIf='board'>
-  <ion-card-header>
-    <ion-card-title><h2>
-      {{board.boardName}}
-    </h2></ion-card-title>
+    <ion-card-title>
+      <ion-item *ngIf='board.boardName != ""' lines='none'>
+        <h2>Preview of '{{board.boardName}}' expense board</h2>
+        <app-color-selector></app-color-selector>
+      </ion-item>
+      <h2 *ngIf='board.boardName == ""'>
+        No preview available yet
+      </h2>
+    </ion-card-title>
     <ion-card-subtitle>
-      {{board.boardSubtitle}}
+      <ion-item lines='none' *ngIf='board.boardName != ""'>
+        {{board.boardSubtitle}}
+        <app-color-selector></app-color-selector>
+      </ion-item>
+      <div *ngIf='board.boardName == ""'>Preview of the board will be shown here to make some final changes before adding it to your expenses board</div>
     </ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    <ion-list lines='none' *ngIf="disp != 'banner'">
-      <ion-list-header><h2>Expenses</h2></ion-list-header>
-      <ion-item *ngFor='let j of board.boardExpenses'>
+    <ion-list lines='none' *ngIf="board.boardName != ''">
+      <ion-item *ngFor='let j of board.boardExpenses; let k = index'>
         <ion-label slot='start'> {{j.expensesName}} </ion-label>
         <ion-chip slot='end'>
           <ion-label> {{j.expensesValue}} </ion-label>
         </ion-chip>
+        <ion-button color='dark' slot='end' (click)='deleteExpense(j)'>
+          <ion-icon name="close" slot='icon-only'></ion-icon>
+        </ion-button>
       </ion-item>
-      <ion-item>
+    </ion-list>
+    <ion-row *ngIf='board.boardName != ""'>
+      <ion-col size='12' size-sm='6'>
         <ion-button
         fill='outline'
         expand='block'
@@ -34,7 +39,8 @@
         >Add
         <ion-icon name="add" slot='end'></ion-icon>
         </ion-button>
-      
+      </ion-col>
+      <ion-col size='12' size-sm='6'>
         <ion-button
         fill='outline'
         expand='block'
@@ -43,7 +49,7 @@
         >Delete
         <ion-icon name="trash" slot='end'></ion-icon>
         </ion-button>
-    </ion-item>
-    </ion-list>
+      </ion-col>
+    </ion-row>
   </ion-card-content>
 </ion-card>

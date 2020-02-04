@@ -8,13 +8,15 @@ import { ExpenseBoardPageRoutingModule } from './expense-board-routing.module';
 
 import { ExpenseBoardPage } from './expense-board.page';
 import { ExpenseBoardPreviewComponent } from './expense-board-preview/expense-board-preview.component';
+import { ToolsModule } from '../tools/tools.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExpenseBoardPageRoutingModule
+    ExpenseBoardPageRoutingModule,
+    ToolsModule
   ],
   declarations: [ExpenseBoardPage, ExpenseBoardPreviewComponent]
 })

@@ -14,16 +14,23 @@ export class ExpenseBoardPage implements OnInit {
   expenses: Expenses[] = [];
 
   currentBoard: ExpensesBoard;
-  dispwhat = 'banner';
 
   constructor(private eb: ExpensesService) { }
 
   ngOnInit() {
+    this.currentBoard = {
+      boardName: '',
+      boardSubtitle: '',
+      boardExpenses: [],
+      boardNameColor: '',
+      boardSubtitleColor: ''
+    };
     this.eb.getUpdatedExpensesBoards().subscribe(res => {
       this.boards = res;
     });
     this.eb.getUpdatedCurrentBoard().subscribe(res => {
       this.currentBoard = res;
+      this.expenses = res.boardExpenses;
     });
   }
 
@@ -31,23 +38,29 @@ export class ExpenseBoardPage implements OnInit {
     this.eb.putCurrentBoard({
       boardName: boardData.value.boardTitle,
       boardSubtitle: boardData.value.boardSubtitle,
-      boardExpenses: this.expenses
+      boardExpenses: this.expenses,
+      boardNameColor: '',
+      boardSubtitleColor: ''
     });
     boardData.resetForm();
-    this.expenses = [];
-    this.dispwhat = 'notbanner';
   }
 
   ongSubmitExpensesForm(expensesData: NgForm) {
     this.expenses.push({
       expensesName: expensesData.value.expenseName,
-      expensesValue: expensesData.value.expenseAmount
+      expensesValue: expensesData.value.expenseAmount,
+      expensesColor: ''
     });
+    if (this.currentBoard) {
+      this.eb.putCurrentBoard(this.currentBoard = {
+        boardName: this.currentBoard.boardName,
+        boardSubtitle: this.currentBoard.boardSubtitle,
+        boardExpenses: this.expenses,
+        boardNameColor: '',
+        boardSubtitleColor: ''
+      });
+    }
     expensesData.resetForm();
-  }
-
-  selectDisp(data: string) {
-    this.dispwhat = data;
   }
 
 }

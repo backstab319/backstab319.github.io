@@ -43,7 +43,12 @@ export class ExpensesService {
   }
 
   deleteCurrentBoard() {
-    delete this.currentBoard;
+    this.currentBoard = {
+      boardName: '',
+      boardExpenses: [],
+      boardSubtitle: ''
+    };
     this.updatedCurrentBoard.next({...this.currentBoard});
+    console.log({...this.currentBoard});
   }
 }

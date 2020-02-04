@@ -15,6 +15,8 @@ import { ViewExpensesPage } from './view-expenses.page';
     IonicModule,
     ViewExpensesPageRoutingModule
   ],
-  declarations: [ViewExpensesPage]
+  declarations: [
+    ViewExpensesPage
+  ]
 })
 export class ViewExpensesPageModule {}

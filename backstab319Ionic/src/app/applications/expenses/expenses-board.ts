@@ -4,4 +4,6 @@ export interface ExpensesBoard {
     boardName: string;
     boardSubtitle: string;
     boardExpenses: Expenses[];
+    boardNameColor: string;
+    boardSubtitleColor: string;
 }
