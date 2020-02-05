@@ -28,6 +28,11 @@ export class ExpensesService {
     return this.updatedExpensesBoards.asObservable();
   }
 
+  deleteFromExpensesBoards(itemIndex: number) {
+    this.expensesBoards.splice(itemIndex, 1);
+    this.updatedExpensesBoards.next([...this.expensesBoards]);
+  }
+
   // Current Board section
   putCurrentBoard(data: ExpensesBoard) {
     this.currentBoard = data;
@@ -46,9 +51,10 @@ export class ExpensesService {
     this.currentBoard = {
       boardName: '',
       boardExpenses: [],
-      boardSubtitle: ''
+      boardSubtitle: '',
+      boardNameColor: '',
+      boardSubtitleColor: ''
     };
     this.updatedCurrentBoard.next({...this.currentBoard});
-    console.log({...this.currentBoard});
   }
 }

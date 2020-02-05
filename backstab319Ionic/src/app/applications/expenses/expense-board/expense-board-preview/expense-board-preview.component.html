@@ -20,13 +20,15 @@
   <ion-card-content>
     <ion-list lines='none' *ngIf="board.boardName != ''">
       <ion-item *ngFor='let j of board.boardExpenses; let k = index'>
-        <ion-label slot='start'> {{j.expensesName}} </ion-label>
-        <ion-chip slot='end'>
-          <ion-label> {{j.expensesValue}} </ion-label>
-        </ion-chip>
-        <ion-button color='dark' slot='end' (click)='deleteExpense(j)'>
-          <ion-icon name="close" slot='icon-only'></ion-icon>
-        </ion-button>
+        <ion-label> {{j.expensesName}} </ion-label>
+        <ion-buttons slot='end'>
+          <ion-chip>
+            <ion-label> {{j.expensesValue}} </ion-label>
+          </ion-chip>
+          <ion-button color='dark' (click)='deleteExpense(j)'>
+            <ion-icon name="close" slot='icon-only'></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
     </ion-list>
     <ion-row *ngIf='board.boardName != ""'>
@@ -35,7 +37,7 @@
         fill='outline'
         expand='block'
         color='dark'
-        (click)='addBoard()'
+        (click)='raiseAddBoard()'
         >Add
         <ion-icon name="add" slot='end'></ion-icon>
         </ion-button>
@@ -45,7 +47,7 @@
         fill='outline'
         expand='block'
         color='dark'
-        (click)='delBoard()'
+        (click)='raiseDelBoard()'
         >Delete
         <ion-icon name="trash" slot='end'></ion-icon>
         </ion-button>
