@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExpensesService } from '../expenses.service';
 import { ExpensesBoard } from '../expenses-board';
 import { Expenses } from '../expenses';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-expenses',
@@ -13,20 +14,20 @@ export class ViewExpensesPage implements OnInit {
   currentBoard: ExpensesBoard;
   total = 0;
 
-  constructor(private es: ExpensesService) { }
+  constructor(
+    private es: ExpensesService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.es.getUpdatedExpensesBoards().subscribe(res => this.boards = res);
     this.es.getUpdatedCurrentBoard().subscribe(res => this.currentBoard = res);
   }
 
-  boardDone(itemIndex: number) {
-    return;
-  }
-
   boardEdit = (itemIndex: number) => {
     this.es.putCurrentBoard(this.boards[itemIndex]);
     this.es.deleteFromExpensesBoards(itemIndex);
+    this.router.navigateByUrl('applications/expenses/expenses-board');
   }
 
   boardDelete = (itemIndex: number) => this.es.deleteFromExpensesBoards(itemIndex);

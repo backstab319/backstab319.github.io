@@ -21,7 +21,7 @@ export class ApplicationsPage implements OnInit {
     {
       appName: 'Expenses',
       appDescription: 'List out your future of past expenses to keep track of them',
-      appFeatures: ['Categorize expenses', 'Label categories', 'Calculate different expenses'],
+      appFeatures: ['Categorize expenses', 'Label categories', 'Calculate different expenses', 'Customize boards with colors', 'Edit existing boards', 'Add to existing boards'],
       appImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSn2xZCG7MxjxyYGPh9mlF_qp65ZM_amHJW-ZQG9ciCBfTntM0N',
       appCode: 'https://github.com/backstab319/backstab319.github.io',
       appOpenLink: '/applications/expenses'

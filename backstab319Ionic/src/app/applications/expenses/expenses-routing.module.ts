@@ -27,15 +27,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'enter-expenses',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./enter-expenses/enter-expenses.module').then( m => m.EnterExpensesPageModule)
-          }
-        ]
-      },
-      {
         path: '',
         redirectTo: '/applications/expenses/view-expenses',
         pathMatch: 'full'

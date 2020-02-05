@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExpensesService } from '../../expenses.service';
 import { AlertController } from '@ionic/angular';
 import { ExpensesBoard } from '../../expenses-board';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-expense-board-preview',
@@ -13,7 +14,8 @@ export class ExpenseBoardPreviewComponent implements OnInit {
 
   constructor(
     private eb: ExpensesService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -74,6 +76,7 @@ export class ExpenseBoardPreviewComponent implements OnInit {
   addBoard() {
     this.eb.putIntoExpensesBoards(this.board);
     this.eb.deleteCurrentBoard();
+    this.router.navigateByUrl('/applications/expenses/view-expenses');
   }
 
   delBoard() {
@@ -89,5 +92,15 @@ export class ExpenseBoardPreviewComponent implements OnInit {
 
   deleteExpense(index: number) {
     this.board.boardExpenses.splice(index, 1);
+  }
+
+  selectColor(color: string, element: string) {
+    if (element == 'title') {
+      this.board.boardNameColor = color;
+    } else if (element == 'subtitle') {
+      this.board.boardSubtitleColor = color;
+    } else {
+      this.board.boardExpenses[Number(element)].expensesColor = color;
+    }
   }
 }

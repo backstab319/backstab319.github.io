@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-color-selector',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-selector.component.scss'],
 })
 export class ColorSelectorComponent implements OnInit {
+  @Output() color = new EventEmitter<string>();
 
   constructor() { }
 
@@ -16,5 +17,9 @@ export class ColorSelectorComponent implements OnInit {
   };
 
   ngOnInit() {}
+
+  dispColor(color: string) {
+    this.color.emit(color);
+  }
 
 }

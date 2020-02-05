@@ -1,7 +1,7 @@
 <ion-item lines='none'>
   <ion-label><ion-icon name="color-palette"></ion-icon></ion-label>
   <ion-select
-  [interfaceOptions]='myPopOver' interface='popover'
+  [interfaceOptions]='myPopOver' interface='popover' (ionChange)='dispColor(color.value)' #color
   >
     <ion-select-option value='primary'>Primary</ion-select-option>
     <ion-select-option value='secondary'>Secondary</ion-select-option>
