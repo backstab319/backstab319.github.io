@@ -1,0 +1,3 @@
+[submodule "backstab319Ionic/src/app/applications/chat-web-app"]
+	path = backstab319Ionic/src/app/applications/chat-web-app
+	url = https://github.com/backstab319/chat-web-app.git
