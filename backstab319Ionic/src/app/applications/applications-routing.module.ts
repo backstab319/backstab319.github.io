@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'expenses',
     loadChildren: () => import('./expenses/expenses.module').then( m => m.ExpensesPageModule)
+  },
+  {
+    path: 'chat-web-app',
+    loadChildren: () => import('./chat-web-app/chat-web-app.module').then( m => m.ChatWebAppPageModule)
   }
 ];
 

@@ -16,6 +16,13 @@ export class CurrentProjectsPage implements OnInit {
       projectRepo: 'https://github.com/backstab319/backstab319.github.io',
       projectLangs: ['Ionic Framework', 'Angular'],
       projectThumbnail: 'https://i.imgur.com/t5HqN3P.png'
+    },
+    {
+      projectName: 'chat-web-app',
+      projectDescription: 'A simple chat web app made using angular and ionic framework',
+      projectRepo: 'https://github.com/backstab319/chat-web-app',
+      projectLangs: ['Ionic Framework', 'Angular', 'Node JS', 'Express JS', 'Mongo DB'],
+      projectThumbnail: 'https://imgur.com/R3xZcWl.png'
     }
   ];
 

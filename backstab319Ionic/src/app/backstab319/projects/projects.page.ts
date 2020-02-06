@@ -10,6 +10,20 @@ export class ProjectsPage implements OnInit {
 
   projects: Project[] = [
     {
+      projectRepo: 'https://github.com/backstab319/backstab319.github.io/tree/todo',
+      projectName: 'To Do',
+      projectDescription: 'List out your things to do so that you dont forget them',
+      projectLangs: ['Ionic Framework', 'Angular'],
+      projectThumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxufq9XwZsW75qlbaSXqCf0NKmLSgxj4P-Iw7i_4p58wxA4AHc'
+    },
+    {
+      projectRepo: 'https://github.com/backstab319/backstab319.github.io/tree/expenses',
+      projectName: 'Expenses',
+      projectDescription: 'List out your future of past expenses to keep track of them',
+      projectLangs: ['Ionic Framework', 'Angular'],
+      projectThumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSn2xZCG7MxjxyYGPh9mlF_qp65ZM_amHJW-ZQG9ciCBfTntM0N'
+    },
+    {
       projectRepo: 'https://github.com/backstab319/Client-Management-System',
       projectName: 'Client Management System',
       projectDescription: 'Used to manage the clients and employees of an organisation',
