@@ -27,8 +27,8 @@ export class AppComponent {
     });
   }
 
-  closeMenu() {
-    this.gs.menuToggle();
+  closeMenu(area: string) {
+    this.gs.menuToggle(area);
   }
 
 }

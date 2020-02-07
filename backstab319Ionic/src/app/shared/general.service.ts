@@ -12,8 +12,8 @@ export class GeneralService {
     private menuCtl: MenuController
   ) { }
 
-  menuToggle() {
-    this.menuCtl.toggle();
+  menuToggle(area: string) {
+    this.menuCtl.toggle(area);
   }
 
   gotoPage(path: string) {

@@ -11,13 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuComponentComponent } from './menu-component/menu-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { SocialComponent } from './footer-component/social/social.component';
+import { ChatWebAppMenuComponent } from './applications/chat-web-app/tools/chat-web-app-menu/chat-web-app-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponentComponent,
     FooterComponentComponent,
-    SocialComponent
+    SocialComponent,
+    ChatWebAppMenuComponent
   ],
   entryComponents: [SocialComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
