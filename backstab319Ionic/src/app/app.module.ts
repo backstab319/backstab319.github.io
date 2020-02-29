@@ -11,18 +11,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuComponentComponent } from './menu-component/menu-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { SocialComponent } from './footer-component/social/social.component';
-import { ChatWebAppMenuComponent } from './applications/chat-web-app/tools/chat-web-app-menu/chat-web-app-menu.component';
+
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponentComponent,
     FooterComponentComponent,
-    SocialComponent,
-    ChatWebAppMenuComponent
+    SocialComponent
   ],
   entryComponents: [SocialComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
