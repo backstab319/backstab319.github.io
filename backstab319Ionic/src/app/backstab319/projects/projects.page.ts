@@ -10,6 +10,13 @@ export class ProjectsPage implements OnInit {
 
   projects: Project[] = [
     {
+      projectRepo: 'https://github.com/backstab319/chat-web-app',
+      projectName: 'Chat web app',
+      projectDescription: 'A simple chat web app made using angular and ionic framework',
+      projectLangs: ['Ionic Framework', 'Angular', 'Node JS', 'Express JS', 'Mongo DB'],
+      projectThumbnail: 'https://imgur.com/R3xZcWl.png'
+    },
+    {
       projectRepo: 'https://github.com/backstab319/backstab319.github.io/tree/todo',
       projectName: 'To Do',
       projectDescription: 'List out your things to do so that you dont forget them',
