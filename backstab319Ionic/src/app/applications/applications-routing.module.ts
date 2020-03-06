@@ -19,10 +19,6 @@ const routes: Routes = [
   {
     path: 'chat-web-app',
     loadChildren: () => import('./chat-web-app/chat-web-app.module').then( m => m.ChatWebAppPageModule)
-  },
-  {
-    path: 'chat-web-app',
-    loadChildren: () => import('./chat-web-app/chat-web-app.module').then( m => m.ChatWebAppPageModule)
   }
 ];
 
