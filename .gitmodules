@@ -4,3 +4,6 @@
 [submodule "backstab319Ionic/src/app/applications/translate"]
 	path = backstab319Ionic/src/app/applications/translate
 	url = https://github.com/backstab319/translate
+[submodule "backstab319Ionic/src/app/applications/assignments"]
+	path = backstab319Ionic/src/app/applications/assignments
+	url = https://github.com/backstab319/assignments.git
