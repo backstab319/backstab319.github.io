@@ -10,6 +10,22 @@ import { GeneralService } from '../shared/general.service';
 export class ApplicationsPage implements OnInit {
   apps: AppDetail[] = [
     {
+      appName: 'Lets connect',
+      appDescription: 'A video calling and texting web application made using ionic framework with jitsi to enable video calling',
+      appFeatures: ['Video calling', 'Texting', 'Material UI', 'Clean Interface', 'Beautiful interface', 'Cross platform', 'More features to come'],
+      appImage: 'https://jitsi.org/wp-content/uploads/2021/01/jitsi-meet.jpg',
+      appCode: 'https://github.com/backstab319/lets-connect',
+      appOpenLink: 'https://backstab-7d143.web.app/'
+    },
+    {
+      appName: 'Chat web app',
+      appDescription: 'A simple chat web app made using angular and ionic framework',
+      appFeatures: ['Easy to use', 'Beautiful interface', 'Cross platform', 'More features to come'],
+      appImage: 'https://imgur.com/R3xZcWl.png',
+      appCode: 'https://github.com/backstab319/chat-web-app',
+      appOpenLink: '/applications/chat-web-app'
+    },
+    {
       appName: 'To Do',
       appDescription: 'List out your things to do so that you dont forget them',
       // tslint:disable-next-line: max-line-length
@@ -27,14 +43,6 @@ export class ApplicationsPage implements OnInit {
       appCode: 'https://github.com/backstab319/backstab319.github.io/tree/expenses',
       appOpenLink: '/applications/expenses'
     },
-    {
-      appName: 'chat-web-app',
-      appDescription: 'A simple chat web app made using angular and ionic framework',
-      appFeatures: ['Easy to use', 'Beautiful interface', 'Cross platform', 'More features to come'],
-      appImage: 'https://imgur.com/R3xZcWl.png',
-      appCode: 'https://github.com/backstab319/chat-web-app',
-      appOpenLink: '/applications/chat-web-app'
-    }
   ];
 
   constructor(private gs: GeneralService) { }
@@ -42,8 +50,14 @@ export class ApplicationsPage implements OnInit {
   ngOnInit() {
   }
 
-  openApp(appLink: string) {
-    this.gs.gotoAbs(appLink);
+  openApp(appDetail: AppDetail) {
+    let externalAppLinks: string[] = ['Lets connect'];
+
+    if (externalAppLinks.includes(appDetail.appName)) {
+      window.open(appDetail.appOpenLink, '_blank');
+    } else {
+      this.gs.gotoAbs(appDetail.appOpenLink);
+    }
   }
 
 }

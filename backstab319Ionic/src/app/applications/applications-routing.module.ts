@@ -20,10 +20,10 @@ const routes: Routes = [
     path: 'chat-web-app',
     loadChildren: () => import('./chat-web-app/chat-web-app.module').then( m => m.ChatWebAppPageModule)
   },
-  {
-    path: 'assignments',
-    loadChildren: () => import('./assignments/assignments.module').then( m => m.AssignmentsPageModule)
-  }
+  // {
+  //   path: 'assignments',
+  //   loadChildren: () => import('./assignments/assignments.module').then( m => m.AssignmentsPageModule)
+  // }
 ];
 
 @NgModule({
