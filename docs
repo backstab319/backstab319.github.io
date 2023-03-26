@@ -1,1 +1,8 @@
 https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/tutorial
+
+--Ionic deployment steps
+https://stackoverflow.com/questions/53036381/how-to-deploy-ionic-4-app-to-github-pages
+
+ionic build --prod --base-href https://backstab319.github.io/backstab319.github.io/
+
+npx angular-cli-ghpages --branch=master --dir=dist
